@@ -21,7 +21,7 @@
 | ------ | ------ | ------ | ------| ------| ------ |
 | 数量 | 2 | 15 | 11 | 640C | 676T |
 ### 3.2 集群拓扑结构
-![Pandao editor.md](https://raw.githubusercontent.com/zhaohh52/cluster/main/pictures/struct.jpg"Pandao editor.md")
+![Pandao editor.md](https://raw.githubusercontent.com/zhaohh52/cluster/main/pictures/struct.jpg "Pandao editor.md")
 ## 5. 集群操作
 常用命令
 ```
