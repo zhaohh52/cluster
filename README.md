@@ -27,6 +27,7 @@
 ```
 
   vnodes # 查看集群各节点资源   
+  qnodes  # 查看节点上的队列信息    
   pestat # 查看各节点当前状态   
   showq  # 查看队列   
   
@@ -34,9 +35,31 @@
   
 ## 5. 任务操作
 ### 5.1 新建任务
+pbs文件实例
+```
+MyPBS.pbs
+#!/bin/bash
 
+### Set job name，for example MyPBS  
+#PBS -N MyPBS
+
+### set output files
+#PBS -o MyPBS.stdout       
+#PBS -e MyPBS.stderr     
+
+### set queue name  
+#PBS -q batch
+
+###set number of nodes,for example one node with 4 cpu.And you can specify the node: #PBS -l nodes=cu01:ppn=4 
+
+#PBS -l nodes=1:ppn=4 
+#the following is you own code
+samtools index pb.map.bam
+…..
+
+```
 ## 6. 集群使用注意事项
-★ 一般使用队列为batch，如需要使用fat需提前告知有关老师；   
+★ 一般使用队列为batch，如需使用fat队列需提前告知有关老师；   
 ★ 删除文件数量较多时，建议分批删除，避免I/O错误，删除文件较大时，及时通知管理员释放回收站；   
 ★ 资源按需申请，避免浪费；   
 ★ 多用压缩文件或二进制文件（fq.gz,bam）；   
