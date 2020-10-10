@@ -1,2 +1,6 @@
-# cluster
-Instructions of HPC at Ye-lab
+# 如何使用集群 
+
+## 1. 账号申请 
+## 2. linux 系统学习
+## 3. 任务准备
+... 
