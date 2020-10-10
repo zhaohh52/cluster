@@ -35,9 +35,9 @@
   
 ## 5. 任务操作
 ### 5.1 新建任务
-pbs文件实例
+pbs文件实例，cat MyPBS.pbs
 ```
-MyPBS.pbs
+
 #!/bin/bash
 
 ### Set job name，for example MyPBS  
@@ -58,10 +58,24 @@ samtools index pb.map.bam
 …..
 
 ```
+### 5.2 提交任务
+```
+qsub MyPBS.pbs
+```
+
+### 5.3 查看任务
+```
+qstat -an
+```
+### 5.3 删除任务
+```
+qdel YourJobID
+```
 ## 6. 集群使用注意事项
 ★ 一般使用队列为batch，如需使用fat队列需提前告知有关老师；   
 ★ 删除文件数量较多时，建议分批删除，避免I/O错误，删除文件较大时，及时通知管理员释放回收站；   
 ★ 资源按需申请，避免浪费；   
 ★ 多用压缩文件或二进制文件（fq.gz,bam）；   
-★ 多用管道少保留中间文件（fq.gz,bam）；   
+★ 多用管道少保留中间文件（fq.gz,bam）；    
+★ 不用的数据及时删除。 
 
