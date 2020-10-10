@@ -22,8 +22,8 @@
 | 数量 | 2 | 15 | 11 | 640C | 676T |
 ### 3.2 集群拓扑结构
 ![Pandao editor.md](https://raw.githubusercontent.com/zhaohh52/cluster/main/pictures/struct.jpg "Pandao editor.md")
-## 5. 集群操作
-常用命令
+## 4. 集群操作
+### 4.1 集群常用命令
 ```
 
   vnodes # 查看集群各节点资源   
@@ -32,7 +32,14 @@
   showq  # 查看队列   
   
 ```
-  
+### 4.2 linux常用命令
+```
+
+  df -Th     # 查看磁盘大小   
+  ls -a      # 显示当前文件夹下所有文件，包含.files    
+  less file  # 浏览文件file  
+  free -g    # 查看机器内存情况
+  top        # 显示系统中各个进程的资源占用状况
 ## 5. 任务操作
 ### 5.1 新建任务
 pbs文件实例，cat MyPBS.pbs
