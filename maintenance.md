@@ -1,9 +1,9 @@
-日期：8月12日 
-日志：cu01节点挂在失败
-具体描述：cu01节点的共享目录/opt /home挂载失败，原因是cu01节点的IB卡没插好，重新插好后重新mount/opt和/home目录，具体路径详见/etc/fstab
-                执行：mount -t nfs -o vers=3 ibmu01:/opt /opt
-	          mount -t nfs 10.10.10.234:/. /home -o vers=3
-	df -Th 查看挂载是否成功
+##日期：8月12日    
+日志：cu01节点挂在失败   
+具体描述：cu01节点的共享目录/opt /home挂载失败，原因是cu01节点的IB卡没插好，重新插好后重新mount/opt和/home目录，具体路径详见/etc/fstab   
+                执行：mount -t nfs -o vers=3 ibmu01:/opt /opt   
+	             mount -t nfs 10.10.10.234:/. /home -o vers=3   
+	              df -Th 查看挂载是否成功
 
 日期：8月18日 
 日志：个人用户删除文件失败，该问题从3月份开始出现
