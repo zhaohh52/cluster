@@ -81,4 +81,10 @@
 ## 日期：10月13日
 日志：计算节点/opt目录磁盘占用近100%。    
 具体描述：集群卡顿，发现计算节点/opt目录磁盘占用近100%。   
-解决办法：mu01节点目录 /opt/tsce4/torque6/share/下执行du -d 1 -h，作业缓存占用较大的文件，沟通提交作业者，删除。  
+解决办法：mu01节点目录 /opt/tsce4/torque6/share/下执行du -d 1 -h，作业缓存占用较大的文件，沟通提交作业者，删除。    
+
+## 日期：10月19日 
+日志：向fat01提交自作业失败   
+具体描述：pestat显示fat01 down,ssh fat01 显示ssh: connect to host fat01 port 22: No route to host。         
+解决办法：去机房手动重启fat01节点。
+根本问题：为什么节点会无故down？
