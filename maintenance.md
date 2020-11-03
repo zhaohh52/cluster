@@ -93,6 +93,6 @@
    
 ## 日期：11月3日 
 日志：fat01down  
-具体描述：pestat显示fat01 down,ssh fat01 显示ssh: kernel:BUG: soft lockup - CPU#50 stuck for 22s! [migration/67"539]         
+具体描述：pestat显示fat01 down,ssh fat01 显示ssh: kernel:BUG: soft lockup - CPU#50 stuck for 22s! [migration/67:539]         
 解决办法：reboot重启之后挂载/home目录，（/etc/rc.local 文件里有记录:mount -t nfs -o vers=3 10.10.10.235:/. /home）
 根本问题：为什么节点会无故down？ 提交作业出现软锁。
