@@ -96,3 +96,9 @@
 具体描述：pestat显示fat01 down,ssh fat01 显示ssh: kernel:BUG: soft lockup - CPU#50 stuck for 22s! [migration/67:539]         
 解决办法：reboot重启之后挂载/home目录，（/etc/rc.local 文件里有记录:mount -t nfs -o vers=3 10.10.10.235:/. /home）
 根本问题：为什么节点会无故down？ 提交作业出现软锁。
+      
+## 日期：11月10日 
+日志：cu11 down  
+具体描述：mu01 可以ping通，但是ssh慢       
+解决办法：预计是内存满，卡顿，需要释放，ssh cu11 echo 3 > /proc/sys/vm/drop_caches解决
+
