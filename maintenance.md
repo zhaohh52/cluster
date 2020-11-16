@@ -100,5 +100,10 @@
 ## 日期：11月10日 
 日志：cu11 down  
 具体描述：mu01 可以ping通，但是ssh慢       
-解决办法：预计是内存满，卡顿，需要释放，ssh cu11 echo 3 > /proc/sys/vm/drop_caches解决
+解决办法：预计是内存满，卡顿，需要释放，ssh cu11 echo 3 > /proc/sys/vm/drop_caches解决   
+   
+## 日期：11月16日 
+日志：jdlin 的一个任务qdel删除不了，前提是已经运行很长时间。  
+具体描述：任务在cu04上，进入节点后，kill相应进程杀不掉，查看具体进程发现是僵尸进程。
+解决办法：在mu01上，执行qdel -p 强制删除，资源释放。
 
