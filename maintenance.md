@@ -109,8 +109,12 @@
 具体描述：任务在cu04上，进入节点后，kill相应进程杀不掉，查看具体进程发现是僵尸进程     
 解决办法：在mu01上，执行qdel -p 强制删除，资源释放。
 
-##日期：5月15日
+## 日期：5月15日 
 日志：mu01节点根目录占用100%,作业无法提交
-解决办法：日志文件较大，占用了内存，使用du -h -d 1 追踪到目录/opt/tsce4/torque6/share/下，删除交大日志即可
+解决办法：日志文件较大，占用了内存，使用du -h -d 1 追踪到目录/opt/tsce4/torque6/share/下，删除较大日志即可.   
+
+## 日期：5月26日 
+日志：fat01节点ssh不进去，可以ping通，pestat结果显示down   
+解决办法：cat   /etc/hosts  |grep  fat01；  ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  off   ；ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  on。   
 
 
