@@ -112,7 +112,12 @@
 ## 日期：5月15日 
 日志：mu01节点根目录占用100%,作业无法提交
 解决办法：日志文件较大，占用了内存，使用du -h -d 1 追踪到目录/opt/tsce4/torque6/share/下，删除较大日志即可.   
-
+   
+## 日期：5月19日 
+日志：inspur01节点执行icfs显示警告，如下图：   
+![Pandao editor.md](https://raw.githubusercontent.com/xjtu-omics/cluster/main/pictures/0603.png "Pandao editor.md")   
+解决办法：进入inspur01节点，执行：icfs osd tree |grep down，显示有两个盘down(24和132)，在mu01上执行：alli 'df -Th | grep 132'发现132盘在inspur05上，进入inspur05执行：df -Th，显示
+"/dev/sdr1      xfs       5.5T  4.4T  1.2T  80% /var/lib/icfs/osd/icfs-132"，执行 umount /dev/sdr1，再执行 mount /dev/sdr1 /var/lib/icfs/osd/icfs-132，刷新icfs osd tree |grep down（稍等几分钟），132正常。   
 ## 日期：5月26日 
 日志：fat01节点ssh不进去，可以ping通，pestat结果显示down   
 解决办法：cat   /etc/hosts  |grep  fat01；  ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  off   ；ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  on。   
