@@ -120,6 +120,8 @@
 "/dev/sdr1      xfs       5.5T  4.4T  1.2T  80% /var/lib/icfs/osd/icfs-132"，查看132盘状态：systemctl status  icfs-osd@132显示failed， systemctl restart icfs-osd@132， 执行 umount /dev/sdr1，再执行mount /dev/sdr1 /var/lib/icfs/osd/icfs-132，刷新icfs osd tree |grep down（稍等几分钟），132正常。   
 ## 日期：5月26日 
 日志：fat01节点ssh不进去，可以ping通，pestat结果显示down   
-解决办法：cat   /etc/hosts  |grep  fat01；  ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  off   ；ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  on。   
-
-
+解决办法：cat   /etc/hosts  |grep  fat01；  ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  off   ；ipmitool    -I   lanplus    -H    11.11.12.102   -U   admin   -P   admin    power  on。     
+## 日期：6月25日 
+日志：mu01节点卡死，连接进去后ls无反应，大多数计算节点卡死（都是已经在使用的节点），qstat有反应。   
+解决办法：重启mu01和计算节点，发现挂载有问题，只有10.10.10.231的IB可用， 其他IB地址不可用（231、233、234及235），进入inspur01节点，执行 ctdb ip,显示如下，执行ctdb status显示，表示存储节点IB掉线，执行systemctl restart ctdb及systemctl start ganesha，等待一会儿，可以ping通五个IB地址，查看ctdb状态，systemctl status ctdb。再次查看ctdb ip显示如下。
+。
