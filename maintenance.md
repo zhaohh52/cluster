@@ -127,3 +127,9 @@
 ![Pandao editor.md](https://raw.githubusercontent.com/xjtu-omics/cluster/main/pictures/ctdb-ip.png "Pandao editor.md")  
 ![Pandao editor.md](https://raw.githubusercontent.com/xjtu-omics/cluster/main/pictures/status.png "Pandao editor.md")   
 ![Pandao editor.md](https://raw.githubusercontent.com/xjtu-omics/cluster/main/pictures/finish.png "Pandao editor.md")   
+
+## 日期：9月1日 
+日志：fat01节点ssh不进去，ping不通，已进入的终端提示如下：   
+![Pandao editor.md](https://raw.githubusercontent.com/xjtu-omics/cluster/main/pictures/fat.png "Pandao editor.md")     
+![Pandao editor.md](https://raw.githubusercontent.com/xjtu-omics/cluster/main/pictures/fat-network.png "Pandao editor.md")     
+解决办法：重启后进入fat01节点，重启网络失败，提示如下，IB卡识别失败。再次关闭电脑，等机器前面的指示灯全暗后，拔掉fat01节点后面四个电源线，再重新接入电，重启。查看网络是否正常，正常后挂载目录。   
