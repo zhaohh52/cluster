@@ -137,3 +137,8 @@
 日志：fat02显示down，可以ping通，但是ssh时间长，ssh进入时候提示“'abrt-cli status' timed out”，cd /homes 失败，df -Th失败           
 解决办法：关闭abrtd服务：systemctl stop abrtd 、systemctl stop abrt-oops，重启服务systemctl start abrtd，systemctl start abrt-oops，
 abrt-auto-reporting enabled
+
+## 日期：05月12日 
+日志：检测资源占用           
+解决办法：cat文件/var/spool/torque/mom_priv/jobs/19413.manager.SC查看任务详情。
+
